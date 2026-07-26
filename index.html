@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Management Portal</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <!--MAIN DASHBOARD-->
+    <div id="main">
+        <!-- Navigation -->
+        <nav id="nav">
+            <h2>📋 Employee Portal</h2>
+            <div id="navLinks">
+                <button id="addBtn">➕ Add Employee</button>
+                <button id="exportBtn">📥 Export CSV</button>
+                <button id="printBtn">🖨️ Print</button>
+            </div>
+        </nav>
+
+        <!-- Header -->
+        <header id="header">
+            <h1>Employee Dashboard</h1>
+        </header>
+
+        <!-- Statistics -->
+        <section id="stats">
+            <div class="stat-card">
+                <h4>Total Employees</h4>
+                <p id="totalEmp">0</p>
+            </div>
+            <div class="stat-card">
+                <h4>Active</h4>
+                <p id="activeEmp">0</p>
+            </div>
+            <div class="stat-card">
+                <h4>Inactive</h4>
+                <p id="inactiveEmp">0</p>
+            </div>
+            <div class="stat-card">
+                <h4>Total Salary</h4>
+                <p id="totalSalary">₹0</p>
+            </div>
+        </section>
+
+        <!-- Controls -->
+        <section id="controls">
+            <div id="controlsTop">
+                <input type="text" id="searchInput" placeholder="Search by ID, Name, Department, Email..." />
+            </div>
+
+            <div id="controlsBottom">
+                <select id="deptSort">
+                    <option value="">Department (A-Z)</option>
+                    <option value="asc">A → Z</option>
+                    <option value="desc">Z → A</option>
+                </select>
+
+                <select id="salarySort">
+                    <option value="">Salary</option>
+                    <option value="low">Low to High</option>
+                    <option value="high">High to Low</option>
+                </select>
+
+                <select id="statusFilter">
+                    <option value="all">All Status</option>
+                    <option value="true">Active</option>
+                    <option value="false">Inactive</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Employee Table -->
+        <section id="tableSection">
+            <div style="overflow-x: auto;">
+                <table id="employeeTable">
+                    <thead>
+                        <tr>
+                            <th>Employee ID</th>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Salary</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Rows will be injected here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div id="pagination">
+                <button id="prevPage">◀ Previous</button>
+                <span id="pageInfo">Page 1 of 1</span>
+                <button id="nextPage">Next ▶</button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <p>© 2026 Employee Management Portal</p>
+        </footer>
+    </div>
+
+    <!-- ========== ADD / EDIT MODAL ========== -->
+    <div id="modal" style="display: none;">
+        <div id="modalContent">
+            <span id="modalClose">&times;</span>
+            <h2 id="modalTitle">Add Employee</h2>
+            <form id="employeeForm">
+                <input type="text" id="empId" placeholder="Employee ID" required />
+                <input type="text" id="empName" placeholder="Full Name" required />
+                <input type="text" id="empDept" placeholder="Department" required />
+                <input type="number" id="empSalary" placeholder="Salary" required />
+                <input type="email" id="empEmail" placeholder="Email" required />
+                <select id="empStatus" required>
+                    <option value="">Select Status</option>
+                    <option value="true">Active</option>
+                    <option value="false">Inactive</option>
+                </select>
+                <button type="submit" id="formSubmitBtn">Add Employee</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
