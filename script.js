@@ -47,7 +47,7 @@ function formatStatus(value) {
 }
 
 function getStatusClass(status) {
-    return status === 'Active' ? 'status-active' : 'status-inactive';
+    return status === 'Active' ? 'status-active' : 'status-inactive'; //CSS Styling
 }
 
 // 4. API OPERATIONS
