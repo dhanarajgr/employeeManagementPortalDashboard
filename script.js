@@ -201,7 +201,7 @@ function renderTable() {
     });
 }
 
-function updateStats() {
+function updateStats() { // for count
     const total = filteredEmployees.length;
     const active = filteredEmployees.filter(e => e.status === true || e.status === 'true').length;
     const inactive = filteredEmployees.filter(e => e.status === false || e.status === 'false').length;
@@ -221,7 +221,7 @@ function openAddModal() {
     formSubmitBtn.textContent = 'Add Employee';
     employeeForm.reset();
     modal.style.display = 'flex';
-    // Auto-generate ID
+    //Auto-generate ID  
     const maxId = allEmployees.reduce((max, e) => Math.max(max, parseInt(e.id) || 0), 0);
     empId.value = maxId + 1;
     empId.readOnly = true;
@@ -320,7 +320,7 @@ function exportCSV() {
         csv += `${emp.id || ''},${emp.name || ''},${emp.departnment || ''},${emp.salary || 0},${emp.email || ''},${statusDisplay}\n`;
     });
 
-    const blob = new Blob([csv], { type: 'text/csv' });
+    const blob = new Blob([csv], { type: 'text/csv' }); // csv for blob
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
