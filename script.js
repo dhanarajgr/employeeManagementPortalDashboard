@@ -1,4 +1,4 @@
-const API_URL = 'https://6992c21b8f29113acd3ea1c1.mockapi.io/details';
+const API_URL = 'https://6992c21b8f29113acd3ea1c1.mockapi.io/employee';
 
 let allEmployees = [];
 let filteredEmployees = [];
